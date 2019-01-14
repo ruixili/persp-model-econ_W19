@@ -1,0 +1,153 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{listings}
+\lstset{frame=single,
+  language=Python,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{harvard}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+
+\begin{document}
+
+\begin{flushleft}
+  \textbf{\large{Problem Set \#[1]}} \\
+  MACS 30000, Dr. Evans \\
+  Ruixi Li
+\end{flushleft}
+
+\vspace{5mm}
+
+\noindent\textbf{Problem 1}
+\textbf \\
+{(a)} Find a theoretical or statistical model from a recently published article (no earlier than 2013) in either the American Economic Review, Econometrica, or the Review of Economic Dynamics.
+
+I choose the \emph{Sexual Violence against Women and Labor Market Outcomes} (Joseph J. Sabia et al, 2013).
+
+\textbf \\
+{(b)} Give a detailed citation of the article.
+
+The detailed citation is as follows:
+
+Sabia, Joseph J., Angela K. Dills, and Jeffrey DeSimone. 2013. "Sexual Violence against Women and Labor Market Outcomes." American Economic Review, 103 (3): 274-78.
+
+\textbf \\
+{(c)} Write down the mathematical or statistical model (write the equations).
+
+The statistical model is as follows:
+
+\begin{equation}\label{EqCoolness}
+Y_{i} = \beta Sexual Violence_{i} + X' \delta + \epsilon_{i}
+\end{equation}
+where $Y_{i}$ is the labor market outcome for individual i, X' is a vector of controls for community, family, and individual heterogeneity with coefficients $\delta$, $\epsilon$ is an error term, and $\beta$ is the parameter of interest.
+
+\textbf \\
+{(d)} List which variables are exogenous (determined outside the model, assumed) and which variables are endogenous (determined inside the model, the output of the model)
+
+The exogenous variables are Sexual Violence, $X'$ (includes community, family, and individual heterogeneity). The endogenous variable is the labor market outcome (includes employment and hourly wage).
+
+\textbf \\
+{(e)} Classify the model as static vs. dynamic, linear vs. nonlinear, deterministic vs. stochastic.
+
+The model is static, linear and deterministic.
+
+\textbf \\
+{(f)}List a variable or feature that you think the model is missing that might be valuable.
+
+In Panel A, the authors control for peer-group and family-level unmeasured heterogeneity by adding school-by-grade FEs, peer group and family characteristics. However, there is little change in the parameter of interest. Since the cognitive ability and educational attainment are controlled already, I think the 6th regression in Panel A is unnecessary.\\
+
+\noindent\textbf{Problem 2}
+\textbf \\
+{(a)} Write down a model of whether someone decides to get married.
+
+I try to investigate the impact of the financial situation on the marriage decision. The model is as follows:
+
+\begin{equation}\label{EqCoolness}
+GetMarried_{i} = \beta Income_{i} + X' \delta + \epsilon_{i}
+\end{equation}
+where $Y_{i}$ is a binary variable which depicts the decision whether get married or not for individual i, X' is a vector of controls for individual characteristics(includes age, gender, race, education), peer's marital status, environmental situation (house price, life expense) with coefficients $\delta$, $\epsilon$ is an error term, and $\beta$ is the parameter of interest.
+
+\textbf \\
+{(d)} What do you think are the key factors that influence this outcome?
+
+I think individual characteristics(includes age,gender, race, education), peer’s marital status, environmental situation (house price,life expense) are key factors that influence this outcome.
+
+\textbf \\
+{(e)} Why did you decide on those factors and not others?
+
+Based on previous literature, income plays a huge role in the marriage decision. Burgess et al.(2003) found that "High earnings capacity increases the probability of marriage and decreases the probability of divorce for young men. High earnings capacity decreases the probability of marriage for young women, and has no impact on divorce". Therefore, I regard income as the key factor that influence the marriage decision. As for the individual factors, the older the individual, the strong the willingness to get married. Women are more likely to get married. Individual with higher education are less likely to get married. In addition, I controlled for peer effect and environmental effect which might has influence on this outcome.
+
+\textbf \\
+{(f)} How could you do a preliminary test whether your factors are significant in real life?
+
+I could collect data through distributing digital questionnaires and conducted a preliminary test to see whether my model is valid.
+
+\vspace{5mm}
+
+\noindent\textbf{Reference}\\
+\textbf\\
+Becker, Gary S. "A Theory of Marriage: Part I." Journal of Political Economy 81, no. 4 (1973): 813-46. http://www.jstor.org/stable/1831130.
+
+\textbf\\
+Burgess, S., Propper, C. & Aassve, A. J Popul Econ (2003) 16: 455. https://doi.org/10.1007/s00148-003-0124-7
+
+\textbf\\
+Sabia, Joseph J., Angela K. Dills, and Jeffrey DeSimone. 2013. "Sexual Violence against Women and Labor Market Outcomes." American Economic Review, 103 (3): 274-78.
+
+
+\end{document}
